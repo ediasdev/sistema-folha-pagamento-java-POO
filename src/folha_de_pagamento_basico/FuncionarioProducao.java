@@ -2,9 +2,9 @@ package folha_de_pagamento_basico;
 
 public class FuncionarioProducao extends Funcionario {
     
-    double valorPorPeca;
-    double quantidadeProduzida;
-    double bonus;
+    private double valorPorPeca;
+    private double quantidadeProduzida;
+    private double bonus;
 
     public FuncionarioProducao (String nome, int id, double valorPorPeca, double quantidadeProduzida) {
         super(nome, id);
@@ -19,10 +19,6 @@ public class FuncionarioProducao extends Funcionario {
     public void calcularSalarioFinal() {
         bonus = valorPorPeca * quantidadeProduzida;
         salarioFinal = salarioBase + bonus;
-    }
-    @Override
-    public void exibirFolhaPagamento() {
         extras = bonus;
-        super.exibirFolhaPagamento();
     }
 }

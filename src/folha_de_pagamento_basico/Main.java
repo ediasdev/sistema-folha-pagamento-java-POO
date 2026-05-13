@@ -48,6 +48,7 @@ public class Main {
                 break;
                 case 4:
                     System.out.println("Total de pessoas cadastradas: " + funcionarios.size());
+                    System.out.println("---------------------");
                     for (Funcionario f : funcionarios) {
                         f.calcularSalarioFinal();
                         f.exibirFolhaPagamento();

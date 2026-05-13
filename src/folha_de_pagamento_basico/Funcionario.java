@@ -1,12 +1,12 @@
 package folha_de_pagamento_basico;
 
-public class Funcionario {
+public abstract class Funcionario {
     
     String nome;
     protected static double salarioBase = 2000;
-    int id;
+    protected int id;
     protected double salarioFinal;
-    double extras = 0;
+    protected double extras = 0;
 
     public Funcionario(String nome, int id) {
         this.nome = nome;
@@ -19,10 +19,10 @@ public class Funcionario {
         return "Extras: ";
     }
     public void exibirFolhaPagamento() {
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Matrícula: " + this.id);
-        System.out.println("Salário Fixo: " + salarioBase);
-        System.out.println(getTipoExtra() + extras);
-        System.out.println("Salário final: " + salarioFinal);
+        System.out.println("Nome: " + nome);
+        System.out.println("Matrícula: " + id);
+        System.out.println("Salário Fixo: " + String.format("%.2f", salarioBase));
+        System.out.println(getTipoExtra() + String.format("%.2f", extras));
+        System.out.println("Salário final: " + String.format("%.2f", salarioFinal));
     }
 }

@@ -2,9 +2,9 @@ package folha_de_pagamento_basico;
 
 public class FuncionarioComissionado extends Funcionario {
     
-    double vendas;
-    double percentualComissao;
-    double comissao;
+    private double vendas;
+    private double percentualComissao;
+    private double comissao;
 
     public FuncionarioComissionado (String nome, int id, double vendas, double percentualComissao) {
         super(nome, id);
@@ -15,15 +15,10 @@ public class FuncionarioComissionado extends Funcionario {
     public void calcularSalarioFinal() {
         comissao = vendas * percentualComissao / 100;
         salarioFinal = salarioBase + comissao;
+        extras = comissao;
     }
     @Override
     public String getTipoExtra() {
         return "Comissão: ";
     }    
-    @Override
-    public void exibirFolhaPagamento() {
-        extras = comissao;
-        super.exibirFolhaPagamento();
-        
-    }
 }
